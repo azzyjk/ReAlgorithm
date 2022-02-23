@@ -26,8 +26,11 @@ int main(){
 
     sort(v.begin(), v.end());
 
-    cout << round((double)sum / N) << "\n";
+    if (round((double)sum / N) == 0) cout << "0\n";
+    else cout << round((double)sum / N) << "\n";
+
     cout << v[N / 2] << "\n";
+
     for (auto i : m){
         if (i.second == maxPresent){
             vPair.push_back(i.first);
@@ -35,6 +38,7 @@ int main(){
     }
     if (vPair.size() > 1) cout << vPair[1] << "\n";
     else cout << vPair[0] << "\n";
+    
     cout << v[v.size() - 1] - v[0] << "\n";
     return 0;
 }
